@@ -18,7 +18,7 @@ const Footer = () => {
                         </a>
                         <div className="hidden lg:flex lg:flex-row">
                             <div className="lg:mr-[28px] lg:w-[77px]">
-                            <p class=" hover:text-[#192DB7] mb-[13px] mt-[-37.5px] font-bold text-[#ffff]">Genre</p>
+                            <p className=" hover:text-[#192DB7] mb-[13px] mt-[-37.5px] font-bold text-[#ffff]">Genre</p>
                                 <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">Aksi</p>   
                                 <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">Anak-anak</p>
                                 <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">Anime</p>
@@ -45,10 +45,10 @@ const Footer = () => {
                     <div className="flex flex-row relative">
                         <h1 className="hover:text-[#192DB7] lg:hidden">Bantuan</h1>
                         <a className="absolute lg:hidden right-[0] sm:right-[-300px]" href="">
-                            <img className="rotate-[270deg]" src="" alt="" />
+                            <img className="rotate-[270deg]" src={ArrowDown} alt="" />
                         </a>
                         <div className="lg:flex font-Lato hidden flex-col">
-                        <p class="hover:text-[#192DB7] mb-[13px] mt-[-37.5px] font-bold text-[#ffff]">Bantuan</p>
+                        <p className="hover:text-[#192DB7] mb-[13px] mt-[-37.5px] font-bold text-[#ffff]">Bantuan</p>
                         <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">FAQ</p>
                         <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">Kontak Kami</p>
                         <p className="hover:text-[#192DB7] mb-[13px] hover:duration-300">Privasi</p>
