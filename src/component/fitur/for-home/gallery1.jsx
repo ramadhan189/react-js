@@ -4,7 +4,7 @@ const Gallery = (props) => {
 
     return (
             <>
-             <h1 className="font-bold text-white text-[20px] leading-[24px]sm:text-[32px] sm:leading-[35.2px]">
+             <h1 className="font-bold text-white text-[20px] leading-[24px] sm:text-[32px] sm:leading-[35.2px]">
                 {props.head}
             </h1>
             <img className="hidden lg:block w-11 h-11 absolute z-[7] top-[120px] left-[60px]" src={Arrow} alt="" />
