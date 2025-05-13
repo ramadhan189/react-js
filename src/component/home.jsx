@@ -1,36 +1,29 @@
-import Cover from "./fitur/for-home/cover"
-import Header from "./fitur/for-home/header"
-import Nav from "./fitur/for-home/nav"
-import Nav2 from "./fitur/for-home/nav-2"
 import Hero from "./fitur/for-home/hero"
+import Beranda from "./fitur/content/background-beranda.png"
 import CoverSection from "./fitur/for-home/cover-section"
-import { Gallery, Movie} from "./fitur/for-home/gallery1"
+import Gallery from "./fitur/for-home/gallery1"
+import Movie from "./fitur/for-home/movie-for-gallery1"
 import {CoverGallery1, Gallery1, Movie1, Trofy} from "./fitur/for-home/gallery2"
-import Footer from "./fitur/for-home/footer"
- import Poster from "./fitur/for-home/poster"
-import Lanscape from "./fitur/for-home/lanscape"
-function Home (){
+ import Poster from "./fitur/for-home/data/poster"
+ import Lanscape from "./fitur/for-home/data/lanscape"
+function Home (){  
+
 
     return(
         <>
-        <Cover>
-           <Header>
-            <Nav/>
-            <Nav2/>
-           </Header>
-            <Hero head="Duty After School" desc="Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan,
+            <Hero img={Beranda} head="Duty After School" desc="Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan,
              Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah.
              Mereka pun segera menjadi pejuang garis depan dalam perang." age="16+" />
             <CoverSection>
-                <Gallery head="Melanjutkan Tonton Film">
-                    <Movie img={Lanscape.Lanscape1} title="A Man Called Oto" rate="8.9" />
-                    <Movie img={Lanscape.Lanscape2} title="Multiverse of Madness" rate="7.9" />
-                    <Movie img={Lanscape.Lanscape4} title="My Hero Academia" rate="7.3" />
-                    <Movie img={Lanscape.Lanscape5} title="Across The Spider-Verse" rate="9.0" />
-                    <Movie img={Lanscape.Lanscape8} title="Suzume" rate="7.0" />
-                    <Movie img={Lanscape.Lanscape9} title="The Batman" rate="9.5" />
-                </Gallery>
-                <CoverGallery1>
+                <Gallery head="Melanjutkan Tontonan Film">
+                    <Movie img={Lanscape.Lanscape1} title="a man called otto" rate="8.9"/>
+                    <Movie img={Lanscape.Lanscape2} title="multiverse of madness" rate="7.9"/>
+                    <Movie img={Lanscape.Lanscape3} title="Dilan 1991" rate="8.0"/>
+                    <Movie img={Lanscape.Lanscape4} title="my hero academia" rate="7.3"/>
+                    <Movie img={Lanscape.Lanscape5} title="a cross the spider-verse" rate="9.0"/>
+                    <Movie img={Lanscape.Lanscape6}  title="fast x" rate="8.0"/>
+                </Gallery>       
+            <CoverGallery1>
                 <Gallery1 head="Top Rating Film dan Series Hari ini">
                     <Movie1 img={Poster.Gambar1}/>
                     <Movie1 img={Poster.Gambar2}/>
@@ -76,8 +69,6 @@ function Home (){
                 </Gallery1>
                 </CoverGallery1>
             </CoverSection>
-            <Footer />
-        </Cover>
         </>
     )
 

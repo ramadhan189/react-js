@@ -1,5 +1,5 @@
 import Arrow from "../content/arrow.png";
-
+import {useHandleArrow} from "./hooks/arrow"
 
 const CoverGallery1 = (props) => {
 
@@ -13,14 +13,16 @@ const CoverGallery1 = (props) => {
 }
 const Gallery1 = (props) => {
 
+    const {handleLeft, handleRight, ref} = useHandleArrow(null);
+
     return (
         <>
-         <h1 className="mt-[20px] sm:mt-10 font-bold text-[20px] sm:text-[32px] leading-[20px] sm:leading-[35.2px]">{props.head}</h1>
+         <h1 className="mt-[20px] sm:mt-10 font-bold text-[20px] sm:text-[32px] leading-[20px] sm:leading-[35.2px] ">{props.head}</h1>
          <section className="relative">
-         <img className="hidden lg:block w-[44px] h-[44px] absolute z-[3] top-[160px] left-[-20px]" src={Arrow} alt="" />
-         <img className="hidden lg:block w-[44px] h-[44px] absolute z-[3] top-[160px] right-[-20px] rotate-[180deg]" src={Arrow} alt="" />
+         <img className="hidden lg:block w-[44px] h-[44px] absolute z-[3] top-[160px] left-[-20px] cursor-pointer" src={Arrow} onClick={handleLeft} alt="" />
+         <img className="hidden lg:block w-[44px] h-[44px] absolute z-[3] top-[160px] right-[-20px] rotate-[180deg] cursor-pointer" src={Arrow} onClick={handleRight} alt="" />
          <div className="relative flex justify-center mt-[20px] min-w-[300px] max-h-[145px] sm:max-h-[365px]">
-                    <div className="flex flex-row overflow-x-scroll scroll-bar w-[100%] relative">
+                    <div className="flex flex-row overflow-x-scroll scroll-bar w-[100%] relative" ref={ref}>
                         {props.children}
                     </div>
                 </div>
@@ -42,7 +44,7 @@ const Trofy = (props) => {
 
     return (
         <>
-         <span className={`block absolute font-Lato font-[400px] text-[5px] sm:text-[14px] leading-[9px] sm:leading-[19px] text-center w-[14px] sm:w-[31px] h-[21px] sm:h-[48px] bg-[#B71F1D] top-[0] rounded-tr-sm rounded-bl-sm ${props.className}`}>{props.title}</span>
+         <span className={`block absolute font-[Lato] font-[400px] text-[5px] sm:text-[14px] leading-[9px] sm:leading-[19px] text-center w-[14px] sm:w-[31px] h-[18px] sm:h-[48px] bg-[#B71F1D] top-[0] rounded-tr-sm rounded-bl-sm ${props.className}`}>{props.title}</span>
         </>
     )
 }

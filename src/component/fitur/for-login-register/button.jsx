@@ -10,7 +10,7 @@ function Div (props){
 function Button (props) {
     return (
         <>
-         <button className={`duration-300 hover:text-[#757575] bg-[#3D4142] border-solid   border-[#E7E3FC3B] text-[#fff] font-lato font-[600px] text-[10px] leading-[14px] tracking-[.2px] rounded-[13.86px] border-[.58px] pt-[8.1px] pb-[8.1px] xl:text-[16px] xl:leading-[22.4px] xl:rounded-[24px] xl:border-[1px] xl:pt-[14px] xl:pb-[14px] ${props.className || ""}`}  type={props.type}>{props.decs}</button>
+        <button className={`duration-300 hover:text-[#757575] bg-[#3D4142] border-solid text-center  border-[#E7E3FC3B] text-[#fff] font-[Lato] font-[600px] text-[10px] leading-[14px] tracking-[.2px] rounded-[13.86px] border-[.58px] pt-[8.1px] pb-[8.1px] xl:text-[16px] xl:leading-[22.4px] xl:rounded-[24px] xl:border-[1px] xl:pt-[14px] xl:pb-[14px] ${props.className || ""}`} type="submit" >{props.desc}</button>
         </>
     )
 }

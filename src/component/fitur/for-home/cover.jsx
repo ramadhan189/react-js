@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-
-const Home = (props) => {
+import { Outlet } from "react-router";
+const Cover = (props) => {
     useEffect(() => {
         document.body.classList.add("bg-[#181A1C]");
         document.body.classList.add("h-[3000px]")
@@ -14,8 +14,9 @@ const Home = (props) => {
         <main className="bg-[#181A1C] box-border flex flex-col">
         {props.children}
         </main>
+        
         </>
     )
 }
 
-export default Home
+export default Cover

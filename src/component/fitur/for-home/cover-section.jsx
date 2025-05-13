@@ -3,7 +3,7 @@
 const CoverSection = (props) => {
     
     return (
-        <section className="relative px-5 sm:px-20 text-Lato">
+        <section className=" px-5 sm:px-20 font-[Lato]">
             {props.children}
         </section>
     )
