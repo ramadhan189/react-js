@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
+import { Link } from "react-router"
+
 import MovieChill from "../content/Logo.png"
 import Movie1 from "../content/movie-open.png"
 import Arrow from "../content/drop-down.png"
-import { useNavigate } from "react-router"
-const Nav = ({setGenre}) => {
+ const Nav = ({setGenre}) => {
 
     const navigate = useNavigate();
     
@@ -29,12 +31,12 @@ const Nav = ({setGenre}) => {
         <>
         <nav className="flex items-center box-border grow shrink gap-x-[12px] sm:gap-x-[15.5%] basis-auto justify-start ">
             <div className=" inline-flex items-center gap-3 sm:gap-[80px]">
-            <a href="./">
+            <Link to={"./"}>
             <img className="hidden sm:block object-contain" src={MovieChill} alt="" />
             <img className="block sm:hidden object-contain" src={Movie1} alt="" />
-            </a>
+            </Link>
             <ul className="inline-flex gap-3 sm:gap-[80px] font-[Lato] text-[#fff] font-[500px] text-[10px] leading-[14px] tracking-[.2px] sm:text-[18px] sm:leading-[25.2px]">
-                <a className="hover:text-[#192DB7] hover:transition duration-300 " href="series">Series</a>
+                <Link className="hover:text-[#192DB7] hover:transition duration-300 " to={"./series"}>series</Link>
                 <p className="hover:text-[#192DB7] hover:transition duration-300" onClick={handleDropDown}>Film</p>
                 <div className={` lg:absolute top-20 left-12 lg:top-40 lg:left-24 lg:rounded-[8px] lg:bg-[#22282A] ${ !open ? "hidden" : "block"}`}>
                   <p className="font-[Lato] flex flex-row relative lg:absolute top-0 lg:top-[-30px] lg:bg-[#22282A] lg:rounded-[8px] lg:py-[10px] lg:px-[22px] lg:hover:rounded-[8px] lg:hover:bg-[#3D4142]" onClick={handleGenre}>Genre
@@ -61,7 +63,7 @@ const Nav = ({setGenre}) => {
                 </ul>
                 </div>
                  </div>	
-                <a className="hover:text-[#192DB7] hover:transition duration-300" href="daftarSaya">Daftar saya</a>
+                <Link className="hover:text-[#192DB7] hover:transition duration-300" to={"./daftarsaya"}>daftar saya</Link>
             </ul>
             </div>
         </nav >

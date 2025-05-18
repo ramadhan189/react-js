@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+
 import Login from "./component/login";
 import Register from "./component/register";
 import Home from "./component/home";
@@ -13,16 +14,17 @@ function Awal() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route index element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/" element={<Layout />}>
+      <Route path="/home" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="series" element={<Series />} />
         <Route path="daftarSaya" element={<DaftarSaya />} />
         <Route path="film" element={<Film />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="premium" element={<Premium />}/>
-        <Route path="pembayaran" element={<Pembayaran />} />    
+        <Route path="premium" element={<Premium />}>
+          <Route path="pembayaran" element={<Pembayaran />} />            
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>

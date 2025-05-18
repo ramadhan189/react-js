@@ -24,52 +24,52 @@ const GenrePoster = [
     {
         img: Poster.Gambar6,
         genre: ["Aksi", "Pertualangan", "Thriller"],
-        top: 1
+        top: "Top 1"
     },
     {
         img: Poster.Gambar7,
         genre: ["Aksi", "Pertualangan", "Fantasi", "Sains", "Thriller"],
-        top: 2	
+        top: "Top 2"		
     },
     {
         img: Poster.Gambar8,
         genre: ["Aksi", "Fantasi", "Drama", "Thriller", "Kejahatan"],
-        top: 3
+        top: "Top 3"
     },
     {
         img: Poster.Gambar9,
         genre: ["Aksi", "Fantasi", "Anak", "Komedi", "Thriller", "Kejahatan"],
-        top: 4
+        top: "Top 4"
     },
     {
         img: Poster.Gambar10,
         genre: ["Aksi", "Komedi", "Thriller"],
-        top: 5
+        top: "Top 5"	
     },
     {
         img: Poster.Gambar11,
         genre: ["Aksi", "Drama", "Kdrama", "Thriller", "Pertualangan", "Sains"],
-        top: 6
+        top: "Top 6"
     },
     {
         img: Poster.Gambar12,
         genre: ["Aksi", "Drama", "Pertualangan", "Thriller", "Kdrama"],
-        top: 7
+        top: "Top 7"
     },
     {
         img: Poster.Gambar13,
         genre: ["Komedi", "Drama"],
-        top: 8
+        top: "Top 8"
     },
     {
         img: Poster.Gambar14,
         genre: ["Fantasi", "Aksi", "Pertualangan", "Drama", "thriller", "Anak", "Romantis"],
-        top: 9
+        top: "Top 9"
     },
     {
         img: Poster.Gambar15,
         genre: ["Aksi", "Fantasi", "Anime"],
-        top: 10
+        top: "Top 10"
     },
     {
         img: Poster.Gambar16,

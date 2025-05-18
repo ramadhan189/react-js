@@ -1,12 +1,7 @@
 import Warning from "../../content/Warning.png"
-import { useNavigate } from "react-router"
+import { Link } from "react-router"
 const Section1 = () => {
 
-    const navigate = useNavigate();
-
-    const Handle = () => {
-        navigate("/premium");
-    }
 
     return (
         <>
@@ -20,8 +15,8 @@ const Section1 = () => {
                     </div>
                 </div>
                 <div className="flex justify-end">
-                <button className="w-[189px] py-1.5  px-5 text-sm font-[Lato] rounded-3xl bg-[#2F3334] text-white text-center " onClick={Handle}>Mulai Berlangganan
-                </button>
+                <Link className="w-[189px] py-1.5  px-5 text-sm font-[Lato] rounded-3xl bg-[#2F3334] text-white text-center "  to="/home/premium">Mulai Berlangganan
+                </Link>
                 </div>
             </div>
         </>

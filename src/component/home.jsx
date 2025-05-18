@@ -3,11 +3,10 @@ import Beranda from "./fitur/content/background-beranda.png"
 import CoverSection from "./fitur/for-home/cover-section"
 import Gallery from "./fitur/for-home/gallery1"
 import Movie from "./fitur/for-home/movie-for-gallery1"
-import {CoverGallery1, Gallery1, Movie1, Trofy} from "./fitur/for-home/gallery2"
+import {CoverGallery1, Gallery1, Movie1} from "./fitur/for-home/gallery2"
  import Poster from "./fitur/for-home/data/poster"
- import Lanscape from "./fitur/for-home/data/lanscape"
+ import Lanscape from "./fitur/for-home/data/genre-lanscape"
 function Home (){  
-
 
     return(
         <>
@@ -16,12 +15,9 @@ function Home (){
              Mereka pun segera menjadi pejuang garis depan dalam perang." age="16+" />
             <CoverSection>
                 <Gallery head="Melanjutkan Tontonan Film">
-                    <Movie img={Lanscape.Lanscape1} title="a man called otto" rate="8.9"/>
-                    <Movie img={Lanscape.Lanscape2} title="multiverse of madness" rate="7.9"/>
-                    <Movie img={Lanscape.Lanscape3} title="Dilan 1991" rate="8.0"/>
-                    <Movie img={Lanscape.Lanscape4} title="my hero academia" rate="7.3"/>
-                    <Movie img={Lanscape.Lanscape5} title="a cross the spider-verse" rate="9.0"/>
-                    <Movie img={Lanscape.Lanscape6}  title="fast x" rate="8.0"/>
+                   {Lanscape.map((item, index) => (
+                       <Movie key={index} img={item.img} title={item.title} rate={item.rate} age={item.age} genre={item.genre} />
+                   ))} 
                 </Gallery>       
             <CoverGallery1>
                 <Gallery1 head="Top Rating Film dan Series Hari ini">
@@ -34,26 +30,16 @@ function Home (){
                     <Movie1 img={Poster.Gambar7}/>
                 </Gallery1>
                 <Gallery1 head="Film Trending">
-                    <Movie1 img={Poster.Gambar6}/>
-                    <Trofy className="left-[70px] sm:left-[180px]" title="top 1"/>
-                    <Movie1 img={Poster.Gambar7}/>
-                    <Trofy className="left-[180px] sm:left-[460px]" title="top 2"/>
-                    <Movie1 img={Poster.Gambar8}/> 
-                    <Trofy className="left-[300px] sm:left-[740px]" title="top 3"/>
-                    <Movie1 img={Poster.Gambar9}/>
-                    <Trofy className="left-[415px] sm:left-[1010px]" title="top 4"/>
-                    <Movie1 img={Poster.Gambar10}/>
-                    <Trofy className="left-[530px] sm:left-[1270px]" title="top 5"/>
-                    <Movie1 img={Poster.Gambar11}/>
-                    <Trofy className="left-[645px] sm:left-[1540px]" title="top 6"/>
-                    <Movie1 img={Poster.Gambar12}/>
-                    <Trofy className="left-[760px] sm:left-[1810px]" title="top 7"/>
-                    <Movie1 img={Poster.Gambar13}/>
-                    <Trofy className="left-[875px] sm:left-[2080px]" title="top 8"/>
-                    <Movie1 img={Poster.Gambar14}/>
-                    <Trofy className="left-[990px] sm:left-[2350px] " title="top 9"/>
-                    <Movie1 img={Poster.Gambar15}/>
-                    <Trofy className="left-[1105px] sm:left-[2620px] " title="top 10"/>
+                    <Movie1 img={Poster.Gambar6} title="top 1" />
+                    <Movie1 img={Poster.Gambar7} title="top 2" />
+                    <Movie1 img={Poster.Gambar8} title="top 3" />
+                    <Movie1 img={Poster.Gambar9} title="top 4" />
+                    <Movie1 img={Poster.Gambar10} title="top 5" />
+                    <Movie1 img={Poster.Gambar11} title="top 6" />
+                    <Movie1 img={Poster.Gambar12} title="top 7" />
+                    <Movie1 img={Poster.Gambar13} title="top 8" />
+                    <Movie1 img={Poster.Gambar14} title="top 9" />
+                    <Movie1 img={Poster.Gambar15} title="top 10" />
                 </Gallery1>
                 <Gallery1 head="Rilis Terbaru">
                     <Movie1 img={Poster.Gambar16}/>

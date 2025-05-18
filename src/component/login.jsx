@@ -24,7 +24,7 @@ function Login() {
        const foundUser = storeUser.find((user) => user.username === username && user.password === password);
 
        if(foundUser){
-        navigate("/homePage")
+        navigate("/home");
        } else {
         alert("username atau password salah")
        }
