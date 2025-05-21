@@ -1,19 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+import { lazy } from "react";
 
+import UserList from "../api/servis";
 import Login from "./component/login";
-import Register from "./component/register";
-import Home from "./component/home";
+const Register = lazy(() => import("./component/register"));
+const Home = lazy(() => import("./component/home"));
 import  Layout from "./component/layout-homepage";
-import  DaftarSaya from "./component/fitur/for-home/pages/daftar-saya";
-import  Series  from "./component/fitur/for-home/pages/series";
-import Film from "./component/fitur/for-home/pages/film";
-import Profile from "./component/fitur/for-home/pages/profil";
-import Premium from "./component/fitur/for-home/pages/premium/premium";
-import Pembayaran from "./component/fitur/for-home/pages/premium/pembayaran";
+const DaftarSaya = lazy(() => import("./component/fitur/for-home/pages/daftar-saya"));
+const Series = lazy(() => import("./component/fitur/for-home/pages/series"));
+const Film = lazy(() => import("./component/fitur/for-home/pages/film"));
+const Profile = lazy(() => import("./component/fitur/for-home/pages/profil"));
+const Premium = lazy(() => import("./component/fitur/for-home/pages/premium/premium"));
+const Pembayaran = lazy(() => import("./component/fitur/for-home/pages/premium/pembayaran"));
 function Awal() {
   return (
     <BrowserRouter>
     <Routes>
+      <Route path="/user" element={<UserList />} />
       <Route index element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/home" element={<Layout />}>
