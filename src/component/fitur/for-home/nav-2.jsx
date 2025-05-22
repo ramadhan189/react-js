@@ -5,7 +5,7 @@ import { Link } from "react-router"
 import Profile from "../content/profile.png"
 import DropDown from "../content/drop-down.png"
 import Star from "../content/star.png"
-import Login from "../content/Login-variant.png"
+import Login from "../content/login-variant.png"
 import Acount from "../content/account.png"
 
  const Nav2 = () => {
