@@ -7,6 +7,8 @@ const UserList = () => {
 
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editId, setEditId] = useState(null);
 
     // get
     const FetchUsers = async () => {
@@ -24,18 +26,50 @@ const UserList = () => {
     // post
     const AddUsers = async (e) => {
         e.preventDefault();
-        try {
+        if (isEditing) {
+            try {
+                const updateResponse = await axios.put(`${API_URL}/${editId}`, form);
+
+                setUsers(users.map(user => user.id === editId ? updateResponse.data : user));
+                setEditId(null);
+                setIsEditing(false);
+                setForm({username: "", password: ""});
+            } catch (error) {
+                console.error("Error updating data:", error);
+            } 
+        } else {
+         try {
             const postUser = await axios.post(API_URL, form);
             setUsers([...users, postUser.data]);
             setForm({username: "", password: ""});
-        } catch (error) {
-            console.log("gagal menambahkan data", error);
+             } catch (error) {
+                console.log("gagal menambahkan data", error);
+             }
         }
+      
     };
+
+    const DeleteUsers = async (id) => {
+        try {
+            await axios.delete(`${API_URL}/${id}`);
+            setUsers(users.filter((user) => user.id !== id));
+        } catch (error) {
+            console.log("gagal menghapus data", error);
+        }
+    }
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
+
+    const startEdit = (user) => {
+        setIsEditing(true);
+        setEditId(user.id);
+        setForm({
+            username: user.username,
+            password: user.password
+        });
+    };
 
     useEffect(() => {
         FetchUsers()
@@ -63,7 +97,10 @@ const UserList = () => {
                 placeholder="password" 
                 className="bg-amber-50 text-black " 
                 />
-                <button type="submit">submit</button>
+               <button type="submit" className="bg-black text-white mt-2 rounded p-1">
+                     {isEditing ? "Update" : "Submit"}
+               </button>
+
             </form>
 
             <h1 className="text-4xl font-semibold text-center">data user</h1>
@@ -72,6 +109,8 @@ const UserList = () => {
                     <li key={user.id} className="rounded-2xl border-solid border-black p-2 border-2">
                         <p>username: {user.username}</p>
                         <p>password: {user.password}</p>
+                        <button className="text-white bg-red-600 p-2" onClick={() => DeleteUsers(user.id)}>delete</button>
+                        <button className="text-white bg-green-600 p-2" onClick={() => startEdit(user)}>edit</button>
                     </li>
                 ))}
             </ul>
