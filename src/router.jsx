@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 import UserList from "../api/servis";
 import Login from "./component/login";
@@ -9,12 +9,13 @@ import  Layout from "./component/layout-homepage";
 const DaftarSaya = lazy(() => import("./component/fitur/for-home/pages/daftar-saya"));
 const Series = lazy(() => import("./component/fitur/for-home/pages/series"));
 const Film = lazy(() => import("./component/fitur/for-home/pages/film"));
-const Profile = lazy(() => import("./component/fitur/for-home/pages/profil"));
+const Profile = lazy(() => import("./component/fitur/for-home/pages/profil"));2
 const Premium = lazy(() => import("./component/fitur/for-home/pages/premium/premium"));
 const Pembayaran = lazy(() => import("./component/fitur/for-home/pages/premium/pembayaran"));
 function Awal() {
   return (
     <BrowserRouter>
+    <Suspense fallback={<div>Loading...</div>}>
     <Routes>
       <Route path="/user" element={<UserList />} />
       <Route index element={<Login />} />
@@ -30,6 +31,7 @@ function Awal() {
         </Route>
       </Route>
     </Routes>
+    </Suspense>
   </BrowserRouter>
   
   );
