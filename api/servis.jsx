@@ -106,7 +106,7 @@ const UserList = () => {
             <h1 className="text-4xl font-semibold text-center">data user</h1>
             <ul>
                 {users.map((user) => (
-                    <li key={user.id} className="rounded-2xl border-solid border-black p-2 border-2">
+                    <li key={user.id} className={`${isEditing ? "hidden" : "rounded-2xl border-solid border-black p-2 border-2" }`} >
                         <p>username: {user.username}</p>
                         <p>password: {user.password}</p>
                         <button className="text-white bg-red-600 p-2" onClick={() => DeleteUsers(user.id)}>delete</button>
